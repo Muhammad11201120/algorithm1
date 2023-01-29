@@ -283,31 +283,33 @@ struct stUser
 {
 	stInfo information;
 };
-void displayInfo()
+void getInfo(stUser &user)
 {
-	stUser muhammed; // nested structs
 
-	muhammed.information.name = "Muhammed Aissa";
-	muhammed.information.age = 36;
-	muhammed.information.contact.phone = "0505790454";
-	muhammed.information.contact.instagram = "muha_insta";
-	muhammed.information.adress.country = "Saudi Arabia";
-	muhammed.information.adress.city = "Abha";
-	muhammed.information.salary.monthlySalary = 5000;
-	muhammed.information.salary.yearlySalary = muhammed.information.salary.monthlySalary * 12;
-	muhammed.information.Gender = enGender::male;
-	muhammed.information.Married = enMarried::married;
+	user.information.name = "Muhammed Aissa";
+	user.information.age = 36;
+	user.information.contact.phone = "0505790454";
+	user.information.contact.instagram = "muha_insta";
+	user.information.adress.country = "Saudi Arabia";
+	user.information.adress.city = "Abha";
+	user.information.salary.monthlySalary = 5000;
+	user.information.salary.yearlySalary = user.information.salary.monthlySalary * 12;
+	user.information.Gender = enGender::male;
+	user.information.Married = enMarried::married;
+}
+void displayInfo(stUser user)
+{
 
-	cout << "******************************************\n\n";
-	cout << "Name: " << muhammed.information.name << endl
-		 << "Age: " << muhammed.information.age << endl;
-	cout << "Coutry: " << muhammed.information.adress.country << endl
-		 << "City: " << muhammed.information.adress.city << endl;
-	cout << "Phone: " << muhammed.information.contact.phone << endl
-		 << "Gender: " << muhammed.information.Gender << endl
-		 << "Married: " << muhammed.information.Married << endl;
-	cout << "Monthly Salary Is: " << muhammed.information.salary.monthlySalary << endl
-		 << "Yearly Salary Is: " << muhammed.information.salary.yearlySalary << endl;
+	cout << "\n\n******************************************\n\n";
+	cout << "Name: " << user.information.name << endl
+		 << "Age: " << user.information.age << endl;
+	cout << "Coutry: " << user.information.adress.country << endl
+		 << "City: " << user.information.adress.city << endl;
+	cout << "Phone: " << user.information.contact.phone << endl
+		 << "Gender: " << user.information.Gender << endl
+		 << "Married: " << user.information.Married << endl;
+	cout << "Monthly Salary Is: " << user.information.salary.monthlySalary << endl
+		 << "Yearly Salary Is: " << user.information.salary.yearlySalary << endl;
 	cout << "\n\n******************************************\n\n";
 }
 
@@ -332,5 +334,11 @@ int main()
 	// rectangleArea();
 	// triangleArea();
 	// loanInstallment();
-	monthlyLoanInstaalment();
+	// monthlyLoanInstaalment();
+
+	stUser muhammed;
+	getInfo(muhammed);
+	displayInfo(muhammed);
+
+	return 0;
 }
