@@ -74,10 +74,94 @@ void printDayOfAweek()
 
     cout << "\t today is ==> " + getWeekDay(setWeekDays(showWeekDaysMenue()));
     cout << "\n**************************************************\n";
+} /*******main Function*********/
+int askANumberFromUser()
+{
+    int number = 0;
+    do
+    {
+        cout << "Please Enter A Number: ";
+        cin >> number;
+
+    } while (number <= 0);
+
+    return number;
 }
-/*******main Function*********/
+void printNumbersFromOneToN(int number)
+{
+    for (int i = 1; i <= number; i++)
+    {
+        cout << "number => " << i << endl;
+    }
+}
+void printNumbersFromNToOne(int number)
+{
+    for (int i = number; i >= 1; i--)
+    {
+        cout << "Numbers => " << i << endl;
+    }
+}
+void someOddNumbersFromOneToN(int number)
+{
+    int result = 0;
+    for (int i = 1; i <= number; i++)
+    {
+        if (i % 2 == 0)
+        {
+            result += i;
+            cout << result << endl;
+        }
+    }
+}
+void factorialNumbersFromOneToN(int number)
+{
+    unsigned int result = 1;
+
+    for (int i = 1; i <= number; i++)
+    {
+        result *= i;
+        cout << result << endl;
+    }
+}
+void poweOfTwoThreeFour(int number)
+{
+    cout << number * number << endl
+         << number * number * number << endl
+         << number * number * number * number << endl;
+}
+void powerOfM(int number)
+{
+
+    unsigned int result = 1;
+    int power;
+    cout << "Enter The Power: ";
+    cin >> power;
+
+    for (int i = 1; i <= power; i++)
+    {
+        result *= number;
+    }
+    cout << "(" << number << ") Power Of  (" << power << ") is => " << result << endl;
+}
+void printLettersFromAToZ()
+{
+    int small = 97;
+    for (short i = 65; i <= 90; i++)
+    {
+
+        cout << char(i) << " " << char(small++) << endl;
+    }
+}
+
 int main()
 {
-    printDayOfAweek();
+    // printDayOfAweek();
+    // printNumbersFromOneToN(askANumberFromUser());
+    // printNumbersFromNToOne(askANumberFromUser());
+    // someOddNumbersFromOneToN(askANumberFromUser());
+    // factorialNumbersFromOneToN(askANumberFromUser());
+    // poweOfTwoThreeFour(askANumberFromUser());
+    // powerOfM(askANumberFromUser());
+    printLettersFromAToZ();
     return 0;
 }
