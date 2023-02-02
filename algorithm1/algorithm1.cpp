@@ -259,79 +259,91 @@ using namespace std;
 // //	stOwner owner;
 // // };
 
-// // STRUCTS MUST ARRANGE FROM UP TO DOWN TO MAAKE THE COMPILER REACH EACH ONE IF THEY ARE NESTED
-// enum enGender : unsigned short
-// {
-// 	no = 0,
-// 	male = 1,
-// 	female = 2
-// };
-// enum enMarried : unsigned short
-// {
-// 	non = 0,
-// 	single = 1,
-// 	married = 2
-// };
-// struct stSalary
-// {
-// 	int monthlySalary = 0;
-// 	int yearlySalary = 0;
-// };
-// struct stAdress
-// {
-// 	string country;
-// 	string city;
-// 	string BOBox;
-// };
-// struct stContact
-// {
-// 	string phone;
-// 	string instagram;
-// 	string twetter;
-// };
-// struct stInfo
-// {
-// 	string name;
-// 	short age = 0;
-// 	stAdress adress;
-// 	stContact contact;
-// 	stSalary salary;
-// 	enGender Gender = enGender::no;		// enum
-// 	enMarried Married = enMarried::non; // enum
-// };
-// struct stUser
-// {
-// 	stInfo information;
-// };
-// void getInfo(stUser &user)
-// {
+// STRUCTS MUST ARRANGE FROM UP TO DOWN TO MAAKE THE COMPILER REACH EACH ONE IF THEY ARE NESTED
+enum enGender : unsigned short
+{
+	no = 0,
+	male = 1,
+	female = 2
+};
+enum enMarried : unsigned short
+{
+	non = 0,
+	single = 1,
+	married = 2
+};
+struct stSalary
+{
+	int monthlySalary = 0;
+	int yearlySalary = 0;
+};
+struct stAdress
+{
+	string country;
+	string city;
+	string BOBox;
+};
+struct stContact
+{
+	string phone;
+	string instagram;
+	string twetter;
+};
+struct stInfo
+{
+	string name;
+	short age = 0;
+	stAdress adress;
+	stContact contact;
+	stSalary salary;
+	enGender Gender = enGender::no;		// enum
+	enMarried Married = enMarried::non; // enum
+};
+struct stUser
+{
+	stInfo information;
+};
+void getInfo(stUser users[], int counter)
+{
 
-// 	user.information.name = "Muhammed Aissa";
-// 	user.information.age = 36;
-// 	user.information.contact.phone = "0505790454";
-// 	user.information.contact.instagram = "muha_insta";
-// 	user.information.adress.country = "Saudi Arabia";
-// 	user.information.adress.city = "Abha";
-// 	user.information.salary.monthlySalary = 5000;
-// 	user.information.salary.yearlySalary = user.information.salary.monthlySalary * 12;
-// 	user.information.Gender = enGender::male;
-// 	user.information.Married = enMarried::married;
-// }
-// void displayInfo(stUser user)
-// {
+	for (int i = 1; i <= counter; i++)
+	{
+		cout << "Enter User  " << i << " name: ";
+		cin >> users[i].information.name;
+		cout << "Enter user  " << i << " Age: ";
+		cin >> users[i].information.age;
+		cout << "Enter user  " << i << " Phone: ";
+		cin >> users[i].information.contact.phone;
+		cout << "Enter user  " << i << " Instagram: ";
+		cin >> users[i].information.contact.instagram;
+		cout << "Enter user  " << i << " Country: ";
+		cin >> users[i].information.adress.country;
+		cout << "Enter user  " << i << " City: ";
+		cin >> users[i].information.adress.city;
+		cout << "Enter user  " << i << " Monthly Salary: ";
+		cin >> users[i].information.salary.monthlySalary;
+		users[i].information.salary.yearlySalary = users[i].information.salary.monthlySalary * 12;
+		cout << "**************************************" << endl;
+	}
+}
+void displayInfo(stUser users[], int counter)
+{
 
-// 	cout << "\n\n******************************************\n\n";
-// 	cout << "Name: " << user.information.name << endl
-// 		 << "Age: " << user.information.age << endl;
-// 	cout << "Coutry: " << user.information.adress.country << endl
-// 		 << "City: " << user.information.adress.city << endl;
-// 	cout << "Phone: " << user.information.contact.phone << endl
-// 		 << "Gender: " << user.information.Gender << endl
-// 		 << "Married: " << user.information.Married << endl;
-// 	cout << "Monthly Salary Is: " << user.information.salary.monthlySalary << endl
-// 		 << "Yearly Salary Is: " << user.information.salary.yearlySalary << endl;
-// 	cout << "\n\n******************************************\n\n";
-// }
+	for (int i = 0; i < counter; i++)
+	{
+		cout << "\n\n******************************************\n\n";
+		cout << "Name: " << users[i].information.name << endl
+			 << "Age: " << users[i].information.age << endl;
+		cout << "Coutry: " << users[i].information.adress.country << endl
+			 << "City: " << users[i].information.adress.city << endl;
+		cout << "Phone: " << users[i].information.contact.phone << endl
+			 << "Gender: " << users[i].information.Gender << endl
+			 << "Married: " << users[i].information.Married << endl;
+		cout << "Monthly Salary Is: " << users[i].information.salary.monthlySalary << endl
+			 << "Yearly Salary Is: " << users[i].information.salary.yearlySalary << endl;
+		cout << "\n\n******************************************\n\n";
+	}
+}
 
 int main()
 {
@@ -363,6 +375,12 @@ int main()
 	// int names[3];
 	// readGrades(names);
 	// printAverage(names);
+
+	stUser users[20];
+	int counter = 3;
+
+	getInfo(users, counter);
+	displayInfo(users, counter);
 
 	return 0;
 }
