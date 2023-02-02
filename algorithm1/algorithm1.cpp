@@ -303,24 +303,24 @@ struct stUser
 {
 	stInfo information;
 };
-void getInfo(stUser users[], int counter)
+void getInfo(stUser users[100], int counter)
 {
 
-	for (int i = 1; i <= counter; i++)
+	for (int i = 0; i < counter; i++)
 	{
-		cout << "Enter User  " << i << " name: ";
+		cout << "Enter User  " << i + 1 << " name: ";
 		cin >> users[i].information.name;
-		cout << "Enter user  " << i << " Age: ";
+		cout << "Enter user  " << i + 1 << " Age: ";
 		cin >> users[i].information.age;
-		cout << "Enter user  " << i << " Phone: ";
+		cout << "Enter user  " << i + 1 << " Phone: ";
 		cin >> users[i].information.contact.phone;
-		cout << "Enter user  " << i << " Instagram: ";
+		cout << "Enter user  " << i + 1 << " Instagram: ";
 		cin >> users[i].information.contact.instagram;
-		cout << "Enter user  " << i << " Country: ";
+		cout << "Enter user  " << i + 1 << " Country: ";
 		cin >> users[i].information.adress.country;
-		cout << "Enter user  " << i << " City: ";
+		cout << "Enter user  " << i + 1 << " City: ";
 		cin >> users[i].information.adress.city;
-		cout << "Enter user  " << i << " Monthly Salary: ";
+		cout << "Enter user  " << i + 1 << " Monthly Salary: ";
 		cin >> users[i].information.salary.monthlySalary;
 		users[i].information.salary.yearlySalary = users[i].information.salary.monthlySalary * 12;
 		cout << "**************************************" << endl;
@@ -331,7 +331,7 @@ void displayInfo(stUser users[], int counter)
 
 	for (int i = 0; i < counter; i++)
 	{
-		cout << "\n\n******************************************\n\n";
+		cout << "\n\n";
 		cout << "Name: " << users[i].information.name << endl
 			 << "Age: " << users[i].information.age << endl;
 		cout << "Coutry: " << users[i].information.adress.country << endl
@@ -376,8 +376,8 @@ int main()
 	// readGrades(names);
 	// printAverage(names);
 
-	stUser users[20];
-	int counter = 3;
+	stUser users[2];
+	int counter = 2;
 
 	getInfo(users, counter);
 	displayInfo(users, counter);
