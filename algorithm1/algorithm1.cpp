@@ -303,44 +303,44 @@ struct stUser
 {
 	stInfo information;
 };
-void setInfo(stUser users[100], int &counter)
+stUser setInfo(stUser &user)
+{
+
+	cout << "Enter User Name: ";
+	cin >> user.information.name;
+	cout << "Enter User Age: ";
+	cin >> user.information.age;
+	cout << "Enter User Phone: ";
+	cin >> user.information.contact.phone;
+	cout << "Enter User Country: ";
+	cin >> user.information.adress.country;
+	cout << "Enter User City: ";
+	cin >> user.information.adress.city;
+	return user;
+}
+void getInfo(stUser user)
+{
+	cout << "User name is => " << user.information.name << endl;
+	cout << "User Age is => " << user.information.age << endl;
+	cout << "User Phone Number is => " << user.information.contact.phone << endl;
+	cout << "User Country is => " << user.information.adress.country << endl;
+	cout << "User City is => " << user.information.adress.city << endl;
+}
+void setUsersInfo(stUser users[100], int &counter)
 {
 
 	for (int i = 0; i < counter; i++)
 	{
-		cout << "Enter User  " << i + 1 << " name: ";
-		cin >> users[i].information.name;
-		cout << "Enter user  " << i + 1 << " Age: ";
-		cin >> users[i].information.age;
-		cout << "Enter user  " << i + 1 << " Phone: ";
-		cin >> users[i].information.contact.phone;
-		cout << "Enter user  " << i + 1 << " Instagram: ";
-		cin >> users[i].information.contact.instagram;
-		cout << "Enter user  " << i + 1 << " Country: ";
-		cin >> users[i].information.adress.country;
-		cout << "Enter user  " << i + 1 << " City: ";
-		cin >> users[i].information.adress.city;
-		cout << "Enter user  " << i + 1 << " Monthly Salary: ";
-		cin >> users[i].information.salary.monthlySalary;
-		users[i].information.salary.yearlySalary = users[i].information.salary.monthlySalary * 12;
+		setInfo(users[i]);
 		cout << "**************************************" << endl;
 	}
 }
-void getInfo(stUser users[], int counter)
+void getUsersInfo(stUser users[50], int counter)
 {
 
 	for (int i = 0; i < counter; i++)
 	{
-		cout << "\n\n";
-		cout << "Name: " << users[i].information.name << endl
-			 << "Age: " << users[i].information.age << endl;
-		cout << "Coutry: " << users[i].information.adress.country << endl
-			 << "City: " << users[i].information.adress.city << endl;
-		cout << "Phone: " << users[i].information.contact.phone << endl
-			 << "Gender: " << users[i].information.Gender << endl
-			 << "Married: " << users[i].information.Married << endl;
-		cout << "Monthly Salary Is: " << users[i].information.salary.monthlySalary << endl
-			 << "Yearly Salary Is: " << users[i].information.salary.yearlySalary << endl;
+		getInfo(users[i]);
 		cout << "\n\n******************************************\n\n";
 	}
 }
@@ -379,8 +379,8 @@ int main()
 	stUser users[2];
 	int counter = 2;
 
-	setInfo(users, counter);
-	getInfo(users, counter);
+	setUsersInfo(users, counter);
+	getUsersInfo(users, counter);
 
 	return 0;
 }
