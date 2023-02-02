@@ -303,7 +303,7 @@ struct stUser
 {
 	stInfo information;
 };
-void getInfo(stUser users[100], int counter)
+void setInfo(stUser users[100], int &counter)
 {
 
 	for (int i = 0; i < counter; i++)
@@ -326,7 +326,7 @@ void getInfo(stUser users[100], int counter)
 		cout << "**************************************" << endl;
 	}
 }
-void displayInfo(stUser users[], int counter)
+void getInfo(stUser users[], int counter)
 {
 
 	for (int i = 0; i < counter; i++)
@@ -379,8 +379,8 @@ int main()
 	stUser users[2];
 	int counter = 2;
 
+	setInfo(users, counter);
 	getInfo(users, counter);
-	displayInfo(users, counter);
 
 	return 0;
 }
