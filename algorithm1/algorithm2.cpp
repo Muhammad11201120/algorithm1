@@ -1,7 +1,11 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+/*********Constants********/
+const short CAPITAL_START = 65;
+const short CAPITAL_END = 90;
+const short SMALL_START = 97;
+const short SMALL_END = 122;
 /*******My Enums*********/
 enum enWeekDays
 {
@@ -152,7 +156,62 @@ void printLettersFromAToZ()
         cout << char(i) << " " << char(small++) << endl;
     }
 }
+void repeateCapitalLetters()
+{
+    for (int i = CAPITAL_START; i <= CAPITAL_END; i++)
+    {
+        for (int j = CAPITAL_START; j <= CAPITAL_END; j++)
+        {
+            cout << char(i) << char(j) << endl;
+        }
+    }
+}
+void numbersTriangle()
+{
+    for (int i = 1; i <= 10; i++)
+    {
 
+        for (int j = 1; j <= i; j++)
+        {
+            cout << j << " ";
+        }
+        cout << "\n";
+    }
+}
+void numbersUpsidDownTriangle()
+{
+    for (int i = 10; i >= 0; i--)
+    {
+
+        for (int j = 1; j <= i; j++)
+        {
+            cout << j << " ";
+        }
+        cout << "\n";
+    }
+}
+void printTriangleStars()
+{
+    for (int i = 1; i <= 10; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+void printUpsideDownTriangleStars()
+{
+    for (int i = 10; i >= 0; i--)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
 int main()
 {
     // printDayOfAweek();
@@ -163,6 +222,10 @@ int main()
     // poweOfTwoThreeFour(askANumberFromUser());
     // powerOfM(askANumberFromUser());
     // printLettersFromAToZ();
-
+    // repeateCapitalLetters();
+    // numbersTriangle();
+    // numbersUpsidDownTriangle();
+    // printTriangleStars();
+    printUpsideDownTriangleStars();
     return 0;
 }
