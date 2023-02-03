@@ -212,6 +212,31 @@ void printUpsideDownTriangleStars()
         cout << "\n";
     }
 }
+void lettersOneByOne()
+{
+    char result;
+    for (int i = CAPITAL_START; i <= CAPITAL_END; i++)
+    {
+        for (int j = CAPITAL_START; j <= i - 1; j++)
+        {
+            cout << char(j) << " ";
+        }
+
+        cout << endl;
+    }
+}
+void numbersUpsideDown()
+{
+    for (int i = 10; i >= 1; i--)
+    {
+
+        for (int j = 1; j <= i; j++)
+        {
+            cout << j + 1;
+        }
+        cout << endl;
+    }
+}
 int main()
 {
     // printDayOfAweek();
@@ -226,6 +251,8 @@ int main()
     // numbersTriangle();
     // numbersUpsidDownTriangle();
     // printTriangleStars();
-    printUpsideDownTriangleStars();
+    // printUpsideDownTriangleStars();
+    // lettersOneByOne();
+    numbersUpsideDown();
     return 0;
 }
