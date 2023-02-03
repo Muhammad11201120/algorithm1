@@ -110,7 +110,7 @@ void someOddNumbersFromOneToN(int number)
     int result = 0;
     for (int i = 1; i <= number; i++)
     {
-        if (i % 2 == 0)
+        if (i % 2 != 0)
         {
             result += i;
             cout << result << endl;
@@ -122,7 +122,7 @@ void sumEvenNumbers(int number)
     int result = 0;
     for (int i = 1; i <= number; i++)
     {
-        if (i % 2 != 0)
+        if (i % 2 == 0)
         {
             result += i;
         }
@@ -249,13 +249,44 @@ void numbersUpsideDown()
         cout << endl;
     }
 }
+void breakeNumber()
+{
+    int numbers[10];
+    for (int i = 1; i <= 10; i++)
+    {
+        numbers[i] = askANumberFromUser();
+        cout << "You Entered => " << numbers[i] << endl;
+        if (numbers[i] == 3)
+        {
+            break;
+        }
+        cout << "Hers is Some code..\n*******\n*****" << endl; // if you hit 3 this line will not executed
+    }
+    cout << "Number 3 Not Allowed See You Later :)" << endl;
+}
+void findNumberInArray()
+{
+    int arr[10] = {1, 5, 45, 10, 20, 14, 8, 96, 4, 78};
+    int searchFor = 20;
+    for (int i = 1; i <= 10; i++)
+    {
+        cout << "We Are At Itration no: " << i + 1 << endl;
+        if (searchFor == arr[i])
+        {
+            cout << "Number " << searchFor << " Found At Postion: " << i + 1 << endl;
+            break;
+        }
+    }
+}
+
+/*********** Main Function *********/
 int main()
 {
     // printDayOfAweek();
     // printNumbersFromOneToN(askANumberFromUser());
     // printNumbersFromNToOne(askANumberFromUser());
     // someOddNumbersFromOneToN(askANumberFromUser());
-    sumEvenNumbers(askANumberFromUser());
+    // sumEvenNumbers(askANumberFromUser());
     // factorialNumbersFromOneToN(askANumberFromUser());
     // poweOfTwoThreeFour(askANumberFromUser());
     // powerOfM(askANumberFromUser());
@@ -267,5 +298,7 @@ int main()
     // printUpsideDownTriangleStars();
     // lettersOneByOne();
     // numbersUpsideDown();
+    // breakeNumber();
+    findNumberInArray();
     return 0;
 }
