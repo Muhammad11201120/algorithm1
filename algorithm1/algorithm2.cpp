@@ -117,6 +117,18 @@ void someOddNumbersFromOneToN(int number)
         }
     }
 }
+void sumEvenNumbers(int number)
+{
+    int result = 0;
+    for (int i = 1; i <= number; i++)
+    {
+        if (i % 2 != 0)
+        {
+            result += i;
+        }
+    }
+    cout << result;
+}
 void factorialNumbersFromOneToN(int number)
 {
     unsigned int result = 1;
@@ -243,6 +255,7 @@ int main()
     // printNumbersFromOneToN(askANumberFromUser());
     // printNumbersFromNToOne(askANumberFromUser());
     // someOddNumbersFromOneToN(askANumberFromUser());
+    sumEvenNumbers(askANumberFromUser());
     // factorialNumbersFromOneToN(askANumberFromUser());
     // poweOfTwoThreeFour(askANumberFromUser());
     // powerOfM(askANumberFromUser());
@@ -253,6 +266,6 @@ int main()
     // printTriangleStars();
     // printUpsideDownTriangleStars();
     // lettersOneByOne();
-    numbersUpsideDown();
+    // numbersUpsideDown();
     return 0;
 }
